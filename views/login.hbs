@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="../CSS/login.css">
+  <script src="../JS/login.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form>
+        <input id="l_user_id" type="text" placeholder="Enter your email">
+        <input id="l_password"type="password" placeholder="Enter your password">
+        <a href="#">Forgot password?</a>
+        <input id="login" type="button" class="button" value="Login">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+         <label for="check">Signup</label>
+        </span>
+      </div>
+    </div>
+
+    <div class="registration form">
+      <header>Signup</header>
+      <form >
+        <input id="s_user_id" type="text" placeholder="Enter your email">
+         <input id="s_name" type="text" placeholder="Enter your name">
+        <input  id="s_conf_password" type="password" placeholder="Create a password">
+        <div>
+          <input  id="s_otp" type="number" placeholder="Enter the otp">
+          <button id="otp_send">SEND</button>
+        </div>
+        <input id="s_password" type="password" placeholder="Confirm your password">
+        <input id="signup" type="button" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+         <label for="check">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <section class="popup_page" id="popup_page">
+        <div>
+            <h3 id="popup_tip">detected an executable , want to allow ??</h3>
+            <button id="popup_close_btn" type="button" autofocus="true">OK</button>
+        </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../JS/history.js" defer></script>
+    <link rel="stylesheet" href="../CSS/history.css" />
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div id="header">
+
+      <div id="logo">
+        <svg width="200" height="129" viewBox="0 0 200 129" fill="none">
+          <path
+            d="M46.623 86.8925L46.5691 86.9312L46.5188 86.9745L7.63702 120.446L55.8876 49.5625L56.6309 48.4707L55.6418 47.5952L3.64718 1.57568C22.183 0.67227 39.3924 7.97003 56.1291 17.4951C62.3847 21.0552 68.5256 24.8965 74.6359 28.7187C77.2163 30.3328 79.7912 31.9434 82.367 33.5281C90.1591 38.3219 97.9315 42.8591 105.737 46.4125C87.4915 58.2602 67.4985 71.9145 46.623 86.8925ZM142.036 50.2579C131.981 51.7194 122.085 49.7804 112.115 45.8635C130.195 34.2413 146.4 24.5144 159.841 17.176C173.914 9.49244 184.852 4.48611 191.716 2.62233C193.423 2.15896 194.825 1.90491 195.929 1.83974C197.06 1.77296 197.728 1.91432 198.08 2.09135C198.333 2.21885 198.441 2.3609 198.484 2.66519C198.542 3.0779 198.459 3.80425 197.998 4.94825C197.082 7.22156 194.941 10.5059 191.308 14.9175C187.699 19.3007 182.698 24.7029 176.164 31.2001C164.257 43.0407 152.961 48.6701 142.036 50.2579Z"
+            stroke="#158AF7"
+            stroke-width="4"
+          />
+        </svg>
+      </div>
+
+      <div id="d_l_mode_toggle_box">
+        <div class="toggle_box" id="sun">
+          <svg width="51" height="51" viewBox="0 0 51 51" fill="none">
+            <path
+              d="M25.5 4.25V8.5M25.5 42.5V46.75M8.5 25.5H4.25M13.4175 13.4175L10.4123 10.4123M37.5825 13.4175L40.5877 10.4123M13.4175 37.5913L10.4123 40.5965M37.5825 37.5913L40.5877 40.5965M46.75 25.5H42.5M36.125 25.5C36.125 31.368 31.368 36.125 25.5 36.125C19.632 36.125 14.875 31.368 14.875 25.5C14.875 19.632 19.632 14.875 25.5 14.875C31.368 14.875 36.125 19.632 36.125 25.5Z"
+              stroke="#158AF7"
+              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="toggle_box" id="moon">
+          <svg width="45" height="45" viewBox="0 0 48 46" fill="none">
+            <path
+              d="M47 31.4573C43.9792 32.764 40.6259 33.4915 37.095 33.4915C23.8052 33.4915 13.0317 23.1864 13.0317 10.4744C13.0317 7.09698 13.7921 3.88947 15.1583 1C6.80925 4.61159 1 12.6483 1 21.9829C1 34.6949 11.7735 45 25.0633 45C34.8222 45 43.2242 39.4433 47 31.4573Z"
+              stroke="#158AF7"
+              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div id="history_box">
+      <div id="history_body">
+        <div class="decorations">
+          <div class="decor1"></div>
+          <div class="decor2"></div>
+
+          <div class="topic">
+            <h4>HISTORY</h4>
+          </div>
+
+          <div class="decor2"></div>
+          <div class="decor1"></div>
+
+        </div>
+        <div class="contents">
+          {{! dynamic data will be added here }}
+        </div>
+      </div>
+    </div>
+
+    <section class="popup_page" id="popup_page">
+      <div>
+        <h3 id="popup_tip">detected an executable , want to allow ??</h3>
+        <div>
+          <button
+            id="popup_close_btn"
+            type="button"
+            autofocus="true"
+          >CANCEL</button>
+          <button id="allow_executables_btn">ALLOW</button>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

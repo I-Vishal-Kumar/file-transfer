@@ -1,0 +1,175 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <script src="../JS/home.js" defer></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    {{! header }}
+    <div id="header">
+
+      <div id="logo">
+        <svg width="200" height="129" viewBox="0 0 200 129" fill="none">
+          <path
+            d="M46.623 86.8925L46.5691 86.9312L46.5188 86.9745L7.63702 120.446L55.8876 49.5625L56.6309 48.4707L55.6418 47.5952L3.64718 1.57568C22.183 0.67227 39.3924 7.97003 56.1291 17.4951C62.3847 21.0552 68.5256 24.8965 74.6359 28.7187C77.2163 30.3328 79.7912 31.9434 82.367 33.5281C90.1591 38.3219 97.9315 42.8591 105.737 46.4125C87.4915 58.2602 67.4985 71.9145 46.623 86.8925ZM142.036 50.2579C131.981 51.7194 122.085 49.7804 112.115 45.8635C130.195 34.2413 146.4 24.5144 159.841 17.176C173.914 9.49244 184.852 4.48611 191.716 2.62233C193.423 2.15896 194.825 1.90491 195.929 1.83974C197.06 1.77296 197.728 1.91432 198.08 2.09135C198.333 2.21885 198.441 2.3609 198.484 2.66519C198.542 3.0779 198.459 3.80425 197.998 4.94825C197.082 7.22156 194.941 10.5059 191.308 14.9175C187.699 19.3007 182.698 24.7029 176.164 31.2001C164.257 43.0407 152.961 48.6701 142.036 50.2579Z"
+            stroke="#158AF7"
+            stroke-width="4"
+          />
+        </svg>
+      </div>
+
+      <div id="d_l_mode_toggle_box">
+        <div class="toggle_box" id="sun">
+          <svg width="51" height="51" viewBox="0 0 51 51" fill="none">
+            <path
+              d="M25.5 4.25V8.5M25.5 42.5V46.75M8.5 25.5H4.25M13.4175 13.4175L10.4123 10.4123M37.5825 13.4175L40.5877 10.4123M13.4175 37.5913L10.4123 40.5965M37.5825 37.5913L40.5877 40.5965M46.75 25.5H42.5M36.125 25.5C36.125 31.368 31.368 36.125 25.5 36.125C19.632 36.125 14.875 31.368 14.875 25.5C14.875 19.632 19.632 14.875 25.5 14.875C31.368 14.875 36.125 19.632 36.125 25.5Z"
+              stroke="#158AF7"
+              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="toggle_box" id="moon">
+          <svg width="45" height="45" viewBox="0 0 48 46" fill="none">
+            <path
+              d="M47 31.4573C43.9792 32.764 40.6259 33.4915 37.095 33.4915C23.8052 33.4915 13.0317 23.1864 13.0317 10.4744C13.0317 7.09698 13.7921 3.88947 15.1583 1C6.80925 4.61159 1 12.6483 1 21.9829C1 34.6949 11.7735 45 25.0633 45C34.8222 45 43.2242 39.4433 47 31.4573Z"
+              stroke="#158AF7"
+              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    {{! body  }}
+
+    <div id="home_body">
+      <div id="main_box">
+
+        <div class="qr_box">
+
+          {{! <div  id="input_box">
+                 <input onInput={file_input}type="file" name="files"></input>
+                </div>
+                 }}
+
+          <div id="qrcode" onclick="copy_id()">
+          </div>
+        </div>
+
+        <div class="send_receive_btn_box">
+          <button id="send_btn">SEND</button>
+          <button id="receive_btn">RECEIVE</button>
+        </div>
+
+      </div>
+
+      <div id="redirect_btns">
+        <button>
+          <span class="tool_tip">Help</span>
+          <ion-icon name="help-circle-outline"></ion-icon></button>
+        <button>
+          <span class="tool_tip">History</span>
+          <ion-icon name="document-text-outline"></ion-icon></button>
+        <button>
+          <span class="tool_tip">Creator's</span>
+          <ion-icon name="code-slash-outline"></ion-icon></button>
+      </div>
+
+      <div class="connection_status">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="47"
+          height="56"
+          viewBox="0 0 47 56"
+          fill="none"
+        >
+          <path
+            id="connection_stat"
+            d="M26.0179 37.0045H35.25C44.65 37.0045 47 35.1543 47 27.7534V16.652C47 9.25113 44.65 7.40091 35.25 7.40091H28.2C25.85 7.40091 25.3464 6.84584 24.44 5.92072L20.915 2.22027C19.5721 0.819386 18.8 0 15.275 0H11.75C2.35 0 0 1.85023 0 9.25113V27.7534C0 35.1543 2.35 37.0045 11.75 37.0045H20.9821V44.9341C20.9821 45.0662 21.0493 45.172 21.0829 45.3041C19.3371 45.8328 17.9271 46.9429 17.2557 48.3173C17.0879 48.2909 16.9536 48.2381 16.7857 48.2381H3.35714C1.98071 48.2381 0.839286 49.1367 0.839286 50.2204C0.839286 51.3041 1.98071 52.2028 3.35714 52.2028H16.7857C16.9536 52.2028 17.0879 52.15 17.2557 52.1235C18.2293 54.1059 20.6464 55.5068 23.5 55.5068C26.3536 55.5068 28.7707 54.1059 29.7443 52.1235C29.9121 52.15 30.0464 52.2028 30.2143 52.2028H43.6429C45.0193 52.2028 46.1607 51.3041 46.1607 50.2204C46.1607 49.1367 45.0193 48.2381 43.6429 48.2381H30.2143C30.0464 48.2381 29.9121 48.2909 29.7443 48.3173C29.0729 46.9429 27.6629 45.8328 25.9171 45.3041C25.9507 45.172 26.0179 45.0662 26.0179 44.9341V37.0045Z"
+            fill="#ff3d3d"
+          />
+        </svg>
+      </div>
+
+      <div id="receive_popup">
+        <div class="popup_box">
+          <input
+            id="receiving_ID"
+            type="text"
+            placeholder="Enter the copied ID."
+          />
+          <h5>By entering the ID you will be connected to the sender.</h5>
+          <button onClick="receiver()">CONNECT</button>
+          <div onClick="receive_cut_box()" class="receive_cut_box">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <h4>ABOUT</h4>
+      <p>At FastFileShare, our mission is to make file transfers quick, secure,
+        and hassle-free. We understand the importance of efficient data sharing,
+        and we're dedicated to providing a user-friendly platform that ensures
+        your files reach their destination with ease.</p>
+    </div>
+
+    <section class="popup_page" id="popup_page">
+      <div>
+        <h3 id="popup_tip">detected an executable , want to allow ??</h3>
+        <div>
+          <button
+            id="popup_close_btn"
+            type="button"
+            autofocus="true"
+          >CANCEL</button>
+          <button id="allow_executables_btn">ALLOW</button>
+        </div>
+      </div>
+    </section>
+    <section class="popup_page" id="popup_receiving_page">
+      <div>
+        <h3 id="popup_receiving_tip">detected an executable , want to allow ??</h3>
+        <div>
+          <button
+            id="cancel_executable_receiving"
+            type="button"
+            autofocus="true"
+          >CANCEL</button>
+          <button id="allow_receiving_executables_btn">ALLOW</button>
+        </div>
+      </div>
+    </section>
+    <section class="popup_page" id="popup_page_normal">
+      <div>
+        <h3 id="popup_normal_tip">Loading..</h3>
+        <button
+          id="normal_popup_close_btn"
+          style="padding : 0.25rem 1rem; color : white; font-weight : bold; background :rgb(75, 75, 246); outline : none; border : none; border-radius : 5px"
+        >Ok</button>
+      </div>
+    </section>
+
+  </body>
+</html>
